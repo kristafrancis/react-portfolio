@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const pages = [
+    {
+      pageName: "About",
+      pageRoute: "/",
+    },
+    {
+      pageName: "Contact",
+      pageRoute: "/contact",
+    },
+    {
+      pageName: "Portfolio",
+      pageRoute: "/portfolio",
+    },
+    {
+      pageName: "Resume",
+      pageRoute: "/resume",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Nav>
+          {pages.map((page) => {
+            return (
+              <li>
+                <NavLink
+                  activeclassname="active route-active"
+                  className="nav-over mx-2"
+                  to={page.pageRoute}
+                >
+                  {page.pageName}
+                </NavLink>
+              </li>
+            );
+          })}
+        </Nav>
+        <main>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </main>
+        <Footer></Footer>
+      </Router>
     </div>
   );
 }
