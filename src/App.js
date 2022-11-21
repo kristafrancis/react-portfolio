@@ -1,55 +1,36 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Page from "./components/Page";
+import Footer from "./components/Footer";
 
 function App() {
-  const pages = [
+  const [pages] = useState([
     {
-      pageName: "About",
-      pageRoute: "/",
+      name: "about me"
     },
+    { name: "portfolio" },
+    { name: "contact" },
     {
-      pageName: "Contact",
-      pageRoute: "/contact",
-    },
-    {
-      pageName: "Portfolio",
-      pageRoute: "/portfolio",
-    },
-    {
-      pageName: "Resume",
-      pageRoute: "/resume",
-    },
-  ];
+      name: "resume"
+    }
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (
     <div>
-      <Router>
-        <Nav>
-          {pages.map((page) => {
-            return (
-              <li>
-                <NavLink
-                  activeclassname="active route-active"
-                  className="nav-over mx-2"
-                  to={page.pageRoute}
-                >
-                  {page.pageName}
-                </NavLink>
-              </li>
-            );
-          })}
-        </Nav>
-        <main>
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
-        </main>
-        <Footer></Footer>
-      </Router>
+      <Header>
+        <Nav
+          pages={pages}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        ></Nav>
+      </Header>
+      <main>
+        <Page currentPage={currentPage}></Page>
+      </main>
+      <Footer />
     </div>
   );
 }

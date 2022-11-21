@@ -4,7 +4,6 @@ import coverImage from "../../assets/headshot.png";
 function About() {
   return (
     <section className="my-5">
-      <h1 id="about">About Me</h1>
       <img
         src={coverImage}
         className="rounded-pill"
@@ -12,6 +11,9 @@ function About() {
         alt="cover"
       />
       <div className="my-2">
+        <div className="profile-img my-5">
+          <i className="fas fa-user-circle" style={{ fontSize: "96px" }}></i>
+        </div>
         <p>
           I am a recent graduate from University of Central Florida's Full Stack
           Web Development Bootcamp. I have become proficient in Front-End
@@ -28,6 +30,19 @@ function About() {
       </div>
     </section>
   );
+}
+
+{
+  /* <h1 id="about">About Me</h1>
+     
+      <div className="my-2">
+        <p>
+          
+        </p>
+      </div>
+    </section>
+  );
+} */
 }
 
 export default About;
