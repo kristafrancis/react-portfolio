@@ -32,8 +32,7 @@ function About() {
   );
 }
 
-{
-  /* <h1 id="about">About Me</h1>
+/* <h1 id="about">About Me</h1>
      
       <div className="my-2">
         <p>
@@ -43,6 +42,5 @@ function About() {
     </section>
   );
 } */
-}
 
 export default About;

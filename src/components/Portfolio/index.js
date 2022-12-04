@@ -7,7 +7,7 @@ function Portfolio() {
     {
       name: "Book-Nook",
       description: "MERN Stack",
-      link: " https://book-nook2.herokuapp.com/",
+      link: "https://book-nook2.herokuapp.com/",
       repo: "https://github.com/kristafrancis/book-nook-v2",
     },
     {
@@ -30,10 +30,16 @@ function Portfolio() {
       repo: "https://github.com/kristafrancis/weather-dashboard-one",
     },
     {
-      name: "Portfolio",
+      name: "Scheduler",
+      description: "HTML, CSS, Javascript, Moment.js",
+      link: "https://kristafrancis.github.io.scheduler-one/",
+      repo: "https://github.com/kristafrancis/scheduler-one",
+    },
+    {
+      name: "Run-Buddy",
       description: "HTML, CSS",
-      link: "https://kristafrancis.github.io.Portfolio/",
-      repo: "https://github.com/kristafrancis/portfolio",
+      link: "https://kristafrancis.github.io.run-buddy1/",
+      repo: "https://github.com/kristafrancis/run-buddy1",
     },
   ]);
 
